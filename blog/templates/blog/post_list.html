@@ -1,25 +1,13 @@
-<html>
-    <head>
-        <title>大杯可樂牛奶的蘋果骨頭</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    </head>
-    <body>
-        <div>
-            <h3>
-            <a href="https://www.facebook.com/BIGCOKEMILK/">大杯可樂牛奶的蘋果骨頭</a>
-            </br>
-            <a href="https://www.facebook.com/BIGCOKEMILK/">
-            <img src="http://i.imgur.com/lhb6x01h.png" title="source: imgur.com" /></a>
-            </h3>
-        </div>
+{% extends 'blog/base.html' %}
 
-        {% for post in posts %}
-            <div>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaks }}</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
             </div>
-        {% endfor %}
-    </body>
-</html>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
