@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>亂數生產器</h1>
+    <div class="randView">
+    	<div class="randLabel" id="randLabel">0</div>
+   		<button type="submit" class="save btn btn-default" onclick="randGo()">產生 !</button>
+   		</br></br></br>
+    </div>
+    <!--產生隨機值函數-->
+    <script type="text/javascript">
+        var open=true;
+        var go;
+        function randGo() {
+            
+            if(open){
+                go=setInterval("randGoing()",50);
+                open=false;
+            }else{
+                window.clearInterval(go); 
+                open=true;
+            }
+        }
+        
+        function randGoing() {
+            document.getElementById('randLabel').innerHTML=Math.floor((Math.random() * 10) + 1);
+        }
+    </script>
+{% endblock %}

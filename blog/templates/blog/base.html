@@ -6,20 +6,49 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            var open=true;
+            var go;
+            function randGo() {
+                
+                if(open){
+                    go=setInterval("randGoing()",50);
+                    open=false;
+                }else{
+                    window.clearInterval(go); 
+                    open=true;
+                }
+            }
+            
+            function randGoing() {
+                document.getElementById('randLabel').innerHTML=Math.floor((Math.random() * 10) + 1);
+            }
+        </script>
     </head>
     <body>
+        <!--標題-->
         <div class="page-header">
             <h1>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a href="{% url 'post_new' %}" class="top-menu">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
                 {% endif %}
-                <a href="https://www.facebook.com/BIGCOKEMILK/">大杯可樂牛奶的蘋果骨頭</a>
-                </br>
-                <a href="https://www.facebook.com/BIGCOKEMILK/">
-                <img src="http://i.imgur.com/lhb6x01h.png" title="source: imgur.com" /></a>
+                </br></br></br></br></br>
+                    <a class="title" href="{% url 'post_list' %}">大杯可樂牛奶的蘋果骨頭</a>
             </h1>
         </div>
-
+        <!--控制條-->
+        <div class="bar"></div>
+            <div class="controlBtn" id="controlBtn">
+                <a href="{% url 'post_list' %}"> 首頁 </a>|
+                <a href="{% url 'post_rand' %}"> 亂數產生器 </a>|
+                <a href="http://pixiv.me/silverofw"> pixiv </a>|
+                <a href="https://www.facebook.com/BIGCOKEMILK/"> 粉絲團 </a>|
+                <a href=""> 關於 </a>|
+            </div>
+        <div class="bar"></div>
+        <!--內頁-->
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
