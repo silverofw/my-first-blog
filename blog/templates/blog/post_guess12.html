@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">賞罰分明</h2>
+        </div >
+        <div class="guessPas">
+            <p>
+                第一名:</br>
+                三倍獎勵!</br></br>
+                第二名:</br>
+                兩倍獎勵!</br></br>
+                第三名:</br>
+                一倍獎勵!</br>
+            </p>
+        </div>
+        <p2 class="pageNum">12</p2>
+        <div class="guessPageNum">|
+            <a href="{% url 'post_guess1' %}"> 01 </a> |
+            <a href="{% url 'post_guess2' %}"> 02 </a> |
+            <a href="{% url 'post_guess3' %}"> 03 </a> |
+            <a href="{% url 'post_guess4' %}"> 04 </a> |
+            <a href="{% url 'post_guess5' %}"> 05 </a> |
+            <a href="{% url 'post_guess6' %}"> 06 </a> |
+            <a href="{% url 'post_guess7' %}"> 07 </a> |
+            <a href="{% url 'post_guess8' %}"> 08 </a> |
+            <a href="{% url 'post_guess9' %}"> 09 </a> |
+            <a href="{% url 'post_guess10' %}"> 10 </a> |
+            <a href="{% url 'post_guess11' %}"> 11 </a> |
+            <a href="{% url 'post_guess12' %}"> 12 </a> |
+            <a href="{% url 'post_guess13' %}"> 13 </a> |
+        </div >
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

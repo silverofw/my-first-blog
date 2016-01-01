@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">妖怪手錶才是王道!</h2>
+        </div >
+        <div class="guessPas">
+            <h3>答案 :</h3>
+            <p>神奇寶貝</br>
+                </br></br>
+                分數 : 193萬</br>
+                </br></br>
+            </p>
+        </div><p2 class="pageNum">6</p2>
+        <div class="guessPageNum">|
+            <a href="{% url 'post_guess1' %}"> 01 </a> |
+            <a href="{% url 'post_guess2' %}"> 02 </a> |
+            <a href="{% url 'post_guess3' %}"> 03 </a> |
+            <a href="{% url 'post_guess4' %}"> 04 </a> |
+            <a href="{% url 'post_guess5' %}"> 05 </a> |
+            <a href="{% url 'post_guess6' %}"> 06 </a> |
+            <a href="{% url 'post_guess7' %}"> 07 </a> |
+            <a href="{% url 'post_guess8' %}"> 08 </a> |
+            <a href="{% url 'post_guess9' %}"> 09 </a> |
+            <a href="{% url 'post_guess10' %}"> 10 </a> |
+        </div >
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

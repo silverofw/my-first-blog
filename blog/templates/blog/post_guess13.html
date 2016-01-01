@@ -1,0 +1,59 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">思考時間</h2>
+        </div >
+        <div class="guessPas">
+            <p>
+                </br>
+                一分鐘後!遊戲開始!</br></br>
+                不可以討論!不可以討論!不可以討論!</br>
+                <p class="countBack" id="countBack"></p>
+            </p>
+                
+        </div>
+        <p2 class="pageNum">13</p2>
+        <div class="guessPageNum">|
+            <a href="{% url 'post_guess1' %}"> 01 </a> |
+            <a href="{% url 'post_guess2' %}"> 02 </a> |
+            <a href="{% url 'post_guess3' %}"> 03 </a> |
+            <a href="{% url 'post_guess4' %}"> 04 </a> |
+            <a href="{% url 'post_guess5' %}"> 05 </a> |
+            <a href="{% url 'post_guess6' %}"> 06 </a> |
+            <a href="{% url 'post_guess7' %}"> 07 </a> |
+            <a href="{% url 'post_guess8' %}"> 08 </a> |
+            <a href="{% url 'post_guess9' %}"> 09 </a> |
+            <a href="{% url 'post_guess10' %}"> 10 </a> |
+            <a href="{% url 'post_guess11' %}"> 11 </a> |
+            <a href="{% url 'post_guess12' %}"> 12 </a> |
+            <a href="{% url 'post_guess13' %}"> 13 </a> |
+        </div >
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+
+            
+
+            var i=60;
+            var go=setInterval("randGoing()",1000);
+
+            
+            function randGoing() {
+                document.getElementById('countBack').innerHTML="倒數 "+i+" 秒";
+                i=i-1;
+                if(i==0){
+                    document.getElementById('countBack').innerHTML="開始!";
+                    window.clearInterval(go);
+                }
+            }
+
+
+
+
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

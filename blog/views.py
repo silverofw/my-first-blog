@@ -30,6 +30,33 @@ def post_list(request):
 def post_rand(request):
     return render(request, 'blog/post_rand.html')
 
+def post_guess1(request):
+    return render(request, 'blog/post_guess1.html')
+def post_guess2(request):
+    return render(request, 'blog/post_guess2.html')
+def post_guess3(request):
+    return render(request, 'blog/post_guess3.html')
+def post_guess4(request):
+    return render(request, 'blog/post_guess4.html')
+def post_guess5(request):
+    return render(request, 'blog/post_guess5.html')
+def post_guess6(request):
+    return render(request, 'blog/post_guess6.html')
+def post_guess7(request):
+    return render(request, 'blog/post_guess7.html')
+def post_guess8(request):
+    return render(request, 'blog/post_guess8.html')
+def post_guess9(request):
+    return render(request, 'blog/post_guess9.html')
+def post_guess10(request):
+    return render(request, 'blog/post_guess10.html')
+def post_guess11(request):
+    return render(request, 'blog/post_guess11.html')
+def post_guess12(request):
+    return render(request, 'blog/post_guess12.html')
+def post_guess13(request):
+    return render(request, 'blog/post_guess13.html')
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":

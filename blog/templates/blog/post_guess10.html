@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">提示方法</h2>
+        </div >
+        <div class="guessPas">
+            <p>
+                </br>利用亂數產生器，取得1~10隨機亂數，</br>
+                20秒說出提示，總字數不可超過亂數值，</br>
+                超過一個字分數打九折，依此類推。</br>
+                </br></br></br></br>
+            </p>
+        </div><p2 class="pageNum">10</p2>
+        <div class="guessPageNum">|
+            <a href="{% url 'post_guess1' %}"> 01 </a> |
+            <a href="{% url 'post_guess2' %}"> 02 </a> |
+            <a href="{% url 'post_guess3' %}"> 03 </a> |
+            <a href="{% url 'post_guess4' %}"> 04 </a> |
+            <a href="{% url 'post_guess5' %}"> 05 </a> |
+            <a href="{% url 'post_guess6' %}"> 06 </a> |
+            <a href="{% url 'post_guess7' %}"> 07 </a> |
+            <a href="{% url 'post_guess8' %}"> 08 </a> |
+            <a href="{% url 'post_guess9' %}"> 09 </a> |
+            <a href="{% url 'post_guess10' %}"> 10 </a> |
+            <a href="{% url 'post_guess11' %}"> 11 </a> |
+            <a href="{% url 'post_guess12' %}"> 12 </a> |
+            <a href="{% url 'post_guess13' %}"> 13 </a> |
+        </div >
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

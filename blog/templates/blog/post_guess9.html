@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">評分規則</h2>
+        </div >
+        <div class="guessPas">
+            <p>
+                </br>依照Google搜尋引擎的資料比數決定分數。</br>
+                零秒猜中：滿分，一次提示：90%，</br>
+                二次提示：70%，三次提示：50%。</br>
+                都沒人猜中:10%。</br>
+                最後乘上大家所給的分數。</br></br></br>
+            </p>
+        </div><p2 class="pageNum">9</p2>
+        <div class="guessPageNum">|
+            <a href="{% url 'post_guess1' %}"> 01 </a> |
+            <a href="{% url 'post_guess2' %}"> 02 </a> |
+            <a href="{% url 'post_guess3' %}"> 03 </a> |
+            <a href="{% url 'post_guess4' %}"> 04 </a> |
+            <a href="{% url 'post_guess5' %}"> 05 </a> |
+            <a href="{% url 'post_guess6' %}"> 06 </a> |
+            <a href="{% url 'post_guess7' %}"> 07 </a> |
+            <a href="{% url 'post_guess8' %}"> 08 </a> |
+            <a href="{% url 'post_guess9' %}"> 09 </a> |
+            <a href="{% url 'post_guess10' %}"> 10 </a> |
+            <a href="{% url 'post_guess11' %}"> 11 </a> |
+            <a href="{% url 'post_guess12' %}"> 12 </a> |
+            <a href="{% url 'post_guess13' %}"> 13 </a> |
+
+        </div >
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

@@ -2,22 +2,20 @@
 <html>
     <head>
         <title>大杯可樂牛奶的蘋果骨頭</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body class="all">
         <!--標題-->
-        <div class="page-header">
-            <h1>
+        <div class="page-header" id="page-header">
+            <h1 class="page-header-label" id="page-header-label">
                 {% if user.is_authenticated %}
                     <a href="{% url 'post_new' %}" class="top-menu">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
                 {% endif %}
-                </br></br></br></br></br>
-                    <a class="title" href="{% url 'post_list' %}">大杯可樂牛奶的蘋果骨頭</a>
+                    <a href="{% url 'post_list' %}">大杯可樂牛奶的蘋果骨頭</a>
             </h1>
         </div>
         <!--控制條-->
@@ -25,19 +23,29 @@
             <div class="controlBtn" id="controlBtn">
                 <a href="{% url 'post_list' %}"> 首頁 </a>|
                 <a href="{% url 'post_rand' %}"> 亂數產生器 </a>|
-                <a href="http://pixiv.me/silverofw"> pixiv </a>|
-                <a href="https://www.facebook.com/BIGCOKEMILK/"> 粉絲團 </a>|
+                <a target="_blank" href="http://pixiv.me/silverofw"> pixiv </a>|
+                <a target="_blank" href="https://www.facebook.com/BIGCOKEMILK/"> 粉絲團 </a>|
                 <a href=""> 關於 </a>|
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_guess1' %}"> 繪圖猜謎 </a>|
+                    <a href=""> 評分 </a>|
+                    <a href=""> 排行榜 </a>|
+                {% endif %}
             </div>
         <div class="bar"></div>
         <!--內頁-->
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+        <div class="pageInfo" id="pageInfo">
                 {% block content %}
                 {% endblock %}
-                </div>
-            </div>
         </div>
+        <script type="text/javascript">
+            <!--隨機背景顏色-->
+            var colorArray=["#ffb3b3","#ffd9b3","#ffffb3","#d9ffb3",
+            "#b3ffb3","#b3ffd9","#b3ffff","#b3d9ff","#b3c6ff"];
+            var i=Math.floor((Math.random() * 9));
+            document.getElementById('pageInfo').style.backgroundColor=colorArray[i];
+
+
+        </script>
     </body>
 </html>
