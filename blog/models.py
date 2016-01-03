@@ -17,11 +17,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-class User(models.Model):
-    name=models.CharField(max_length=50)
-
-class Point(models.Model):
-    artist=models.CharField(max_length=50)
-    point=models.DecimalField(max_digits=2,decimal_places=0)
-    user=models.ForeignKey(User)
