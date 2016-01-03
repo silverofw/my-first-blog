@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack">
     	<div class="guessTitle">
             <h2 class="guessTitleLabel">處罰</h2>
@@ -37,5 +37,5 @@
 	        document.getElementById('page-header').style.paddingTop=0+"px";
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}

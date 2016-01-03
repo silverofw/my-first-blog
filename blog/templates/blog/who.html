@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack" id="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">Who Are You ?</h2>
+        </div >
+        <div class="guessPas">
+            <h3>請點選您的大名進入網頁。</br></br></h3>
+            <p>
+                <a href="{% url 'who1' %}"> Eric </a>||
+                <a href="{% url 'who2' %}"> Alessandra </a>||
+                <a href="{% url 'who3' %}"> 孟勳 </a>||
+                <a href="{% url 'who4' %}"> 柏翰 </a>||<br/><br/>
+                <a href="{% url 'who5' %}"> Cathy </a>||
+                <a href="{% url 'who6' %}"> 志清 </a>||
+            	<a href="{% url 'who7' %}"> Niki </a>||
+                <a href="{% url 'who8' %}"> 尚真 </a>||
+                <a href="{% url 'who9' %}"> 宇陽 </a>||<br/><br/>
+                <a href="{% url 'who10' %}">亂入1 </a>||
+                <a href="{% url 'who11' %}"> 亂入2 </a>||
+                <a href="{% url 'who12' %}"> 亂入3 </a>||
+                <a href="{% url 'who13' %}"> 亂入4 </a>||
+            </p>
+        </div>
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

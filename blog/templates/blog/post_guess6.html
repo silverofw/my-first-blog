@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack">
     	<div class="guessTitle">
             <h2 class="guessTitleLabel">妖怪手錶才是王道!</h2>
@@ -25,11 +25,14 @@
             <a href="{% url 'post_guess8' %}"> 08 </a> |
             <a href="{% url 'post_guess9' %}"> 09 </a> |
             <a href="{% url 'post_guess10' %}"> 10 </a> |
+            <a href="{% url 'post_guess11' %}"> 11 </a> |
+            <a href="{% url 'post_guess12' %}"> 12 </a> |
+            <a href="{% url 'post_guess13' %}"> 13 </a> |
         </div >
         <script type="text/javascript">
 	        document.getElementById('page-header').style.height=70+"px";
 	        document.getElementById('page-header').style.paddingTop=0+"px";
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}

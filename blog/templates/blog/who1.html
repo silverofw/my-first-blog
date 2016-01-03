@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack" id="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">Eric</h2>
+        </div >
+        <div class="guessPas">
+            <h3>歡迎 ! 請點選您要評分的人名。</br></br></h3>
+            <p>
+            {% for u in names %}
+                    <p>{{u.name}}</p>
+                    <a href="/point/{{r.id}}/">評分</a>
+            {% endfor %}
+            </p>
+        </div>
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="guessBack" id="guessBack">
+    	<div class="guessTitle">
+            <h2 class="guessTitleLabel">Eric</h2>
+        </div >
+        <div class="guessPas">
+            <h2>您給 {{r.name}} 的評分 :</h2>
+            <p>
+            <form action="" method="post">{% csrf_token %}
+                <table>
+                    <tr>
+                        <td><label for="point">評分:</label></td>
+                        <td><textarea id="point" rows="10" cols="10" name="point"></textarea></td>
+                    </tr>
+                </table>
+                <input type="submit" value="給予評分">
+            </form>
+            </p>
+        </div>
+        <script type="text/javascript">
+	        document.getElementById('page-header').style.height=70+"px";
+	        document.getElementById('page-header').style.paddingTop=0+"px";
+        </script>
+    </div>
+    {% endif %}
+{% endblock %}

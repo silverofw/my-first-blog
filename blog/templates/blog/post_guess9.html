@@ -1,18 +1,20 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack">
     	<div class="guessTitle">
             <h2 class="guessTitleLabel">評分規則</h2>
         </div >
         <div class="guessPas">
-            <p>
-                </br>依照Google搜尋引擎的資料比數決定分數。</br>
-                零秒猜中：滿分，一次提示：90%，</br>
-                二次提示：70%，三次提示：50%。</br>
-                都沒人猜中:10%。</br>
-                最後乘上大家所給的分數。</br></br></br>
+            <p></br>
+                1.依照Google搜尋引擎的資料比數決定圖片滿分分數。</br>
+                2.零秒猜中：滿分，提示一次減10%最多三次機會。</br>
+                3.都沒人猜中:總分*10%。</br>
+                4.作者能夠使用比手畫腳的方式提示大家，</br>
+                但不能發出聲音。</br>
+                5.非美術的人圖片分數*1.2。</br>
+                6.<span style="font-size:40pt;color:red;">猜中圖片的人可得到和作者一樣的分數 !</span></br>
             </p>
         </div><p2 class="pageNum">9</p2>
         <div class="guessPageNum">|
@@ -36,5 +38,5 @@
 	        document.getElementById('page-header').style.paddingTop=0+"px";
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}

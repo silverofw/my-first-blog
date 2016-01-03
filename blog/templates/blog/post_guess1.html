@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack" id="guessBack">
     	<div class="guessTitle">
             <h2 class="guessTitleLabel">畫 圖 猜 謎</h2>
@@ -10,7 +10,7 @@
             <h3>主旨 :</br></br></h3>
             <p>每人在三分鐘之內畫出一張圖，</br>
             給大家猜圖畫了什麼東西，</br>
-            且答案一定要為“四個字”。</br>
+            且答案一定要為“<span style="font-size:40pt;color:red;">四個字</span>”。</br>
             </br></br> 
             </p>
         </div>
@@ -33,13 +33,7 @@
         <script type="text/javascript">
 	        document.getElementById('page-header').style.height=70+"px";
 	        document.getElementById('page-header').style.paddingTop=0+"px";
-
-            <!--隨機背景顏色-->
-            var colorArray=["#ffb3b3","#ffd9b3","#ffffb3","#d9ffb3",
-            "#b3ffb3","#b3ffd9","#b3ffff","#b3d9ff","#b3c6ff"];
-            var i=Math.floor((Math.random() * 9));
-            document.getElementById('guessBack').style.backgroundColor=colorArray[i];
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}

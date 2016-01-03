@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 from django.utils import timezone
-from .models import Post
-from django.shortcuts import render, get_object_or_404
+from .models import Post,User,Point
+from django.shortcuts import render,redirect, get_object_or_404 
 from .forms import PostForm
-from django.shortcuts import redirect
-
+from django.template import RequestContext
+from django.http import HttpResponse #可使用HttpResponse
+from django.http import HttpResponseRedirect #可直接重載頁面
 
 def post_new(request):
     if request.method == "POST":

@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack">
     	<div class="guessTitle">
             <h2 class="guessTitleLabel">思考時間</h2>
@@ -37,14 +37,14 @@
 
             
 
-            var i=60;
+            var secBack=60;
             var go=setInterval("randGoing()",1000);
 
             
             function randGoing() {
-                document.getElementById('countBack').innerHTML="倒數 "+i+" 秒";
-                i=i-1;
-                if(i==0){
+                document.getElementById('countBack').innerHTML="倒數 "+secBack+" 秒";
+                secBack=secBack-1;
+                if(secBack==0){
                     document.getElementById('countBack').innerHTML="開始!";
                     window.clearInterval(go);
                 }
@@ -55,5 +55,5 @@
 
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}

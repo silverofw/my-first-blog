@@ -26,8 +26,8 @@
                 <a target="_blank" href="http://pixiv.me/silverofw"> pixiv </a>|
                 <a target="_blank" href="https://www.facebook.com/BIGCOKEMILK/"> 粉絲團 </a>|
                 <a href=""> 關於 </a>|
-                {% if user.is_authenticated %}
-                    <a href="{% url 'post_guess1' %}"> 繪圖猜謎 </a>|
+                <a href="{% url 'post_guess1' %}"> 繪圖猜謎 </a>|
+                {% if user.is_authenticated %}    
                     <a href=""> 評分 </a>|
                     <a href=""> 排行榜 </a>|
                 {% endif %}

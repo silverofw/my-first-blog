@@ -1,10 +1,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+
     <div class="guessBack">
     	<div class="guessTitle">
-            <h2 class="guessTitleLabel">發想</h2>
+            <h2 class="guessTitleLabel">警告</h2>
         </div >
         <div class="guessPas">
             <p>
@@ -35,5 +35,5 @@
 	        document.getElementById('page-header').style.paddingTop=0+"px";
         </script>
     </div>
-    {% endif %}
+
 {% endblock %}
